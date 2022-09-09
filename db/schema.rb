@@ -22,40 +22,30 @@ ActiveRecord::Schema.define(version: 2022_09_07_081225) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "computers", force: :cascade do |t|
-    t.string "model"
-    t.string "core"
-    t.string "disk_space"
-    t.string "ram"
-    t.string "lease_terms"
-    t.integer "payment_per_month"
-    t.integer "purchase_price"
-    t.string "condition"
-    t.integer "client_id"
+  create_table "blogs", force: :cascade do |t|
+    t.string :title
+    t.string :category
+    t.string :content
+    t.integer :author_id
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "enterprises", force: :cascade do |t|
-    t.string "business_name"
-    t.string "address"
-    t.string "physical_location"
-    t.string "phone"
-    t.string "email"
+  create_table "companies", force: :cascade do |t|
+    t.string :company_name
+    t.string :address
+    t.string :location
+    t.string :phone
+    t.string :email
   end
 
-  create_table "manufacturers", force: :cascade do |t|
-    t.string "company_name"
+  create_table "tags", force: :cascade do |t|
+    t.string "tag_name"
   end
 
-  create_table "printers", force: :cascade do |t|
-    t.string "model"
-    t.string "lease_terms"
-    t.integer "payment_per_month"
-    t.integer "purchase_price"
-    t.string "condition"
-    t.integer "enterprise_id"
-    t.integer "manufacturer_id"
+  create_table "displays", force: :cascade do |t|
+    t.string :author
+    t.string :blog
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

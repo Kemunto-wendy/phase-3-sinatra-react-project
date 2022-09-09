@@ -2,31 +2,31 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, "application/json"
 
   # Add routes
-  get "/printers" do
-    printers = Printer.all
-    printers.to_json
+  get "/displays" do
+    displays = Display.all
+    displays.to_json
   end
 
-  post "/printers" do
-    new_printer = Printer.create(
-      body: params[:body],
-      username: params[:username],
+  post "/displays" do
+    new_display = Display.create(
+      author: params[:author],
+      blog: params[:blog],
 
     )
 
-    new_printer.to_json
+    new_display.to_json
   end
 
-  patch "/printers/:id" do
-    printer = Printer.find(params[:id])
-    printer.update(body: params[:body])
-    printer.to_json
+  patch "/displays/:id" do
+    display = Display.find(params[:id])
+    display.update(blog: params[:blog])
+    display.to_json
   end
 
-  delete "/printers/:id" do
-    printer = Printer.find(params[:id])
-    printer.destroy
-    printer.to_json
+  delete "/displays/:id" do
+    display = Printer.find(params[:id])
+    display.destroy
+    display.to_json
   end
 
   #The Authors part
@@ -135,30 +135,30 @@ class ApplicationController < Sinatra::Base
     company.to_json
   end
 
-  #MANUFACTURERS
-  get "/manufacturers" do
-    manufacturers = Manufacturer.all
-    manufacturers.to_json
+  #Tags
+  get "/tags" do
+   tags = Tag.all
+   tags.to_json
   end
 
-  post "/manufacturers" do
-    new_manufacturer = Manufacturer.create(
+  post "/tags" do
+    new_tag = Tag.create(
       company_name: params[:company_name],
 
     )
 
-    new_manufacturer.to_json
+    new_tag.to_json
   end
 
-  patch "/manufacturers/:id" do
-    manufacturer = Manufacturer.find(params[:id])
-    manufacturer.update(company_name: params[:company_name],)
-    manufacturer.to_json
+  patch "/tags/:id" do
+    tag = Tag.find(params[:id])
+    tag.update(tag_name: params[:tag_name],)
+    tag.to_json
   end
 
-  delete "/manufacturers/:id" do
-    manufacturer = Manufacturer.find(params[:id])
-    manufacturer.destroy
-    manufacturer.to_json
+  delete "/tags/:id" do
+   tag = Tag.find(params[:id])
+    tag.destroy
+    tag.to_json
   end
 end

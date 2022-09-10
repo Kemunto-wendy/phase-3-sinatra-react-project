@@ -1,7 +1,6 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, "application/json"
 
-  # Add routes
   get "/displays" do
     displays = Display.all
     displays.to_json
@@ -24,7 +23,7 @@ class ApplicationController < Sinatra::Base
   end
 
   delete "/displays/:id" do
-    display = Printer.find(params[:id])
+    display = Display.find(params[:id])
     display.destroy
     display.to_json
   end

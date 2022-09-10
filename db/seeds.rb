@@ -1,43 +1,36 @@
 puts "🌱 Seeding data..."
 
 puts "Creating companies..."
-ufanisi = Company.create(company_name: "Ufanisi SACCO", address: "23-00100", location:"Ufanisi Building, Kawangware", phone: "0712 345 678", email:"info@ufanisi.com")
+equity = Company.create(company_name: "Equity Bank", address: "001009", location:"Nairobi CBD", phone: "0756446677", email:"info@equity.com")
 
-cooperative = Company.create(company_name: "Cooperative University", address: "456-00100", location:"Karen", phone: "0701 235 876", email:"info@cooperative.com")
+family = Company.create(company_name: "Family Bank", address: "478220", location:"Kilimani", phone: "0798776629", email:"info@family.com")
 
-cannonical = Company.create(company_name: "Cannonical", address: "78-00100", location:"Unga House Westlands", phone: "0723 890 456", email:"tech@cannonical.com")
+women = Company.create(company_name: "Women Tech", address: "798820", location:"Ngong Road", phone: "077689992", email:"tech@womeniintech.com")
 
-mercycorps = Company.create(company_name: "Mercy Corps Kenya", address: "678-00100", location:"Upperhill", phone: "0789 837 837", email:"info@mercycorps.org")
-
-knhcr = Company.create(company_name: "KNHCR", address: "89-00100", location:"Gigiri", phone: "0721 121 121", email:"info@knhcr.org")
 
 puts "Creating tags......"
-epson = Tag.create(tag_name: "Epson")
-hp = Tag.create(tag_name: "HP")
-dell = Tag.create(tag_name: "Dell")
-kyocera = Tag.create(tag_name: "Kyocera")
-panasonic = Tag.create(tag_name: "Panasonic")
+team = Tag.create(tag_name: "Team")
+crew = Tag.create(tag_name: "Crew")
+wish = Tag.create(tag_name: "Wish")
 
 puts "Creating Blogs.."
 
-laserjet = Blog.create(title:"Laserjet MFP M283fdw", category: "Good", content:"new work", author_id: author.id )
-laserjet = Blog.create(title:"Laserjet MFP M283fdw", category: "Good", content:"new work", author_id: author.id )
-laserjet = Blog.create(title:"Laserjet MFP M283fdw", category: "Good", content:"new work", author_id: author.id )
-laserjet = Blog.create(title:"Laserjet MFP M283fdw", category: "Good", content:"new work", author_id: author.id )
-
+developer = Blog.create(title:"How to become a developer", category: "Good", content:"Best programming languages", author_id: author.id )
+developer = Blog.create(title:"How to become a developer", category: "Good", content:"Best programming languages", author_id: author.id )
+developer = Blog.create(title:"How to become a developer", category: "Good", content:"Best programming languages", author_id: author.id )
 
 
 puts "Creating authors......"
-dennis = Author.create(name: "Dennis Kimathi", location: "Wanye Close", passion:"singer", email: "dk38@gmail.com")
-dennis = Author.create(name: "Dennis Kimathi", location: "Wanye Close", passion:"singer", email: "dk38@gmail.com")
-dennis = Author.create(name: "Dennis Kimathi", location: "Wanye Close", passion:"singer", email: "dk38@gmail.com")
-dennis = Author.create(name: "Dennis Kimathi", location: "Wanye Close", passion:"singer", email: "dk38@gmail.com")
+wendy= Author.create(name: "Joy Kemunto", location: "Waiyaki Way", passion:"singer", email: "joykemunto333@gmail.com")
+wendy= Author.create(name: "Joy Kemunto", location: "Waiyaki Way", passion:"singer", email: "joykemunto333@gmail.com")
+wendy= Author.create(name: "Joy Kemunto", location: "Waiyaki Way", passion:"singer", email: "joykemunto333@gmail.com")
+wendy= Author.create(name: "Joy Kemunto", location: "Waiyaki Way", passion:"singer", email: "joykemunto333@gmail.com")
 
 puts "Creating displays...."
-dell3500 = Display.create(author: "Dell Vostro 3500 ", blog:"we are glad to be here")
-dell3500 = Display.create(author: "Dell Vostro 3500 ", blog:"we are glad to be here")
-dell3500 = Display.create(author: "Dell Vostro 3500 ", blog:"we are glad to be here")
-dell3500 = Display.create(author: "Dell Vostro 3500 ", blog:"we are glad to be here")
+wendy = Display.create(author: "Joy Kemunto ", blog:"Come lets learn new stuff")
+wendy = Display.create(author: "Joy Kemunto ", blog:"Come lets learn new stuff")
+wendy = Display.create(author: "Joy Kemunto ", blog:"Come lets learn new stuff")
+wendy = Display.create(author: "Joy Kemunto ", blog:"Come lets learn new stuff")
 
 
 

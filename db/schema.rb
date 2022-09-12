@@ -10,42 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2022_09_07_081225) do
+ActiveRecord::Schema.define(version: 2022_09_10_182032) do
 
   create_table "authors", force: :cascade do |t|
-    t.string :name
-    t.string :location
-    t.string :passion
-    t.string :email
+    t.string "name"
+    t.string "location"
+    t.string "passion"
+    t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "blogs", force: :cascade do |t|
-    t.string :title
-    t.string :category
-    t.string :content
-    t.integer :author_id
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "companies", force: :cascade do |t|
-    t.string :company_name
-    t.string :address
-    t.string :location
-    t.string :phone
-    t.string :email
-  end
-
-  create_table "tags", force: :cascade do |t|
-    t.string "tag_name"
-  end
-
-  create_table "displays", force: :cascade do |t|
-    t.string :author
-    t.string :blog
+    t.string "title"
+    t.string "category"
+    t.string "content"
+    t.integer "author_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

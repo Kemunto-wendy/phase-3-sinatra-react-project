@@ -1,3 +1,3 @@
 class Author < ActiveRecord::Base
-    has_one :blog
+    has_many :blogs
 end

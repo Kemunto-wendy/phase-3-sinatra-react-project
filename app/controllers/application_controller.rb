@@ -1,33 +1,6 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, "application/json"
 
-  get "/displays" do
-    displays = Display.all
-    displays.to_json
-  end
-
-  post "/displays" do
-    new_display = Display.create(
-      author: params[:author],
-      blog: params[:blog],
-
-    )
-
-    new_display.to_json
-  end
-
-  patch "/displays/:id" do
-    display = Display.find(params[:id])
-    display.update(blog: params[:blog])
-    display.to_json
-  end
-
-  delete "/displays/:id" do
-    display = Display.find(params[:id])
-    display.destroy
-    display.to_json
-  end
-
   #The Authors part
   get "/authors" do
     authors = Author.all
@@ -74,6 +47,7 @@ class ApplicationController < Sinatra::Base
       category: params[:category],
       content: params[:content],
       author_id: params[:author_id],
+      cover: params[:cover]
 
     )
 
@@ -87,6 +61,7 @@ class ApplicationController < Sinatra::Base
       category: params[:category],
       content: params[:content],
       author_id: params[:author_id],
+      cover: params[:cover]
     )
     blog.to_json
   end
@@ -97,67 +72,4 @@ class ApplicationController < Sinatra::Base
     blog.to_json
   end
 
-  #Companies
-  get "/companies" do
-    companies = Company.all
-    companies.to_json
-  end
-
-  post "/companies" do
-    companies= Company.create(
-      company_name: params[:company_name],
-      address: params[:address],
-      location: params[:location],
-      phone: params[:phone],
-      email: params[:email],
-
-    )
-
-    companies.to_json
-  end
-
-  patch "/companies/:id" do
-    companies = Company.find(params[:id])
-    companies.update(
-      company_name: params[:company_name],
-      address: params[:address],
-      location: params[:location],
-      phone: params[:phone],
-      email: params[:email],
-    )
-    companies.to_json
-  end
-
-  delete "/companies/:id" do
-    company= Company.find(params[:id])
-    company.destroy
-    company.to_json
-  end
-
-  #Tags
-  get "/tags" do
-   tags = Tag.all
-   tags.to_json
-  end
-
-  post "/tags" do
-    new_tag = Tag.create(
-      company_name: params[:company_name],
-
-    )
-
-    new_tag.to_json
-  end
-
-  patch "/tags/:id" do
-    tag = Tag.find(params[:id])
-    tag.update(tag_name: params[:tag_name],)
-    tag.to_json
-  end
-
-  delete "/tags/:id" do
-   tag = Tag.find(params[:id])
-    tag.destroy
-    tag.to_json
-  end
 end

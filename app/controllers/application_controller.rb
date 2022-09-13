@@ -47,7 +47,7 @@ class ApplicationController < Sinatra::Base
       category: params[:category],
       content: params[:content],
       author_id: params[:author_id],
-      cover: params[:cover]
+
 
     )
 
@@ -61,7 +61,7 @@ class ApplicationController < Sinatra::Base
       category: params[:category],
       content: params[:content],
       author_id: params[:author_id],
-      cover: params[:cover]
+
     )
     blog.to_json
   end

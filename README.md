@@ -25,13 +25,20 @@ Sinatra backend API, where a user can:
 - **Update** an individual todo
 - **Delete** a todo
 
-A blog application that adds a new blog for the users
 A `Todo` can be tagged with a `Category`, so that each todo _belongs to_ a
 category and each category _has many_ todos.
 ## Getting Started
+### BLOG APPLICATION WEBSITE
+A blog application that adds a new blog for the users. The application has two tables the blogs and the authors.
+The class Authors has many blogs while the class Blogs belongs to the author.
+
+## BLOGS URL
+http://localhost:9292/blogs
+
+## AUTHORS URL
+http://localhost:9292/authors
 
 ### Backend Setup
-
 This repository has all the starter code needed to get a Sinatra backend up and
 running. [**Fork and clone**][fork link] this repository to get started. Then, run
 `bundle install` to install the gems.
